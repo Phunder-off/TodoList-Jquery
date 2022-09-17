@@ -1,0 +1,72 @@
+#listTask {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	overflow: auto;
+
+	height: calc(100vh - 57px - 43px);
+
+	form {
+		width: 100%;
+		margin: 1rem;
+	}
+
+	> div#state:not(:empty) {
+		position: fixed;
+		left: 0;
+
+		width: 100vw;
+		height: 100%;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+
+		background: rgba(0, 0, 0, 0.5);
+		color: white;
+	}
+
+	> .list {
+		margin-top: 1rem;
+		width: 100%;
+
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		align-content: flex-start;
+
+		
+	}
+
+	.card {
+		width: 100%;
+	}
+
+	@media (min-width: 512px) {
+		height: calc(100vh - 60px);
+
+		.card {
+			width: 45%;
+		}
+
+		form {
+			width: 75%;
+			margin: 1rem;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		form {
+			width: 50%;
+			margin: 1rem;
+		}
+	}
+
+	@media (min-width: 1536px) {
+		.card {
+			width: 30%;
+		}
+	}
+}

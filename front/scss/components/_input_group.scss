@@ -1,0 +1,46 @@
+.input_group {
+	padding: 5px;
+	width: 100%;
+
+	* {
+		width: 100%;
+	}
+
+	label {
+		position: relative;
+		transition: top 0.5s;
+		top: 1rem;
+		color: gray;
+	}
+
+	input {
+		background: none;
+		border: none;
+		border-bottom: solid 2px $third-color;
+
+		display: block;
+		width: calc(100% - 3px - 5px);
+	}
+
+	&:has(input:not(:placeholder-shown)) {
+		label {
+			top: 0;
+		}
+	}
+
+	&:has(input:focus-visible) {
+		& > label {
+			top: 0;
+		}
+		& > input {
+			outline: none;
+			border-bottom: solid 3px $third-color;
+		}
+	}
+}
+
+.radio_group {
+	display: inline-block;
+	text-align: center;
+	width: 30%;
+}

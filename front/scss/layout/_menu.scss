@@ -1,0 +1,43 @@
+#menu {
+	background: $secondary-color;
+
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+
+	button {
+		width: 100%;
+		padding: 10px;
+
+		text-align: center;
+		font-size: large;
+
+		background: $secondary-color;
+		border: none;
+
+		span {
+			display: none;
+		}
+
+		&:hover {
+			background: $primary-color;
+			color: white;
+		}
+	}
+
+	@media (min-width: 512px) {
+		width: 10%;
+		flex-wrap: wrap;
+	}
+
+	@media (min-width: 1024px) {
+		width: 20%;
+		align-content: start;
+		button {
+			height: 4rem;
+			span {
+				display: inline-block;
+			}
+		}
+	}
+}

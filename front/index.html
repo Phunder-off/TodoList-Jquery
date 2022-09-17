@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+			integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link rel="stylesheet" href="css/index.css" />
+		<title>TodoList</title>
+	</head>
+	<body>
+		<header>
+			<nav id="navbar">
+				<div class="container">
+					<h1>TodoList</h1>
+				</div>
+			</nav>
+		</header>
+
+		<main>
+			<div id="popup">
+				<form id="formNewTask" class="formTask">
+					<h2>Nouvelle tâche</h2>
+					<div>
+						<div class="input_group">
+							<label for="title_new">Titre</label>
+							<input type="text" name="title_new" id="title_new" placeholder=" " required />
+						</div>
+
+						<div class="input_group">
+							<label for="description_new">Description</label>
+							<input type="text" name="description_new" id="description_new" placeholder=" " required />
+						</div>
+
+						<div class="input_group">
+							<label for="author_new">Auteur</label>
+							<input type="text" name="author_new" id="author_new" placeholder=" " required />
+						</div>
+					</div>
+					<button type="submit"><i class="fa fa-save" aria-hidden="true"></i> Enregister</button>
+					<button type="reset" data-action="toggleForm" data-target="formNewTask"><i class="fa fa-close" aria-hidden="true"></i> Annuler</button>
+				</form>
+
+				<form id="formUpdateTask" class="formTask">
+					<h2>Mise a jour de la tâche</h2>
+					<div>
+						<div class="input_group">
+							<label for="title_update">Titre</label>
+							<input type="text" name="title_update" id="title_update" placeholder=" " required />
+						</div>
+
+						<div class="input_group">
+							<label for="description_update">Description</label>
+							<input type="text" name="description_update" id="description_update" placeholder=" " required />
+						</div>
+
+						<div class="input_group">
+							<label for="author_update">Auteur</label>
+							<input type="text" name="author_update" id="author_update" placeholder=" " required />
+						</div>
+					</div>
+					<button type="submit"><i class="fa fa-save" aria-hidden="true"></i> Enregister</button>
+					<button type="reset" data-action="toggleForm" data-target="formUpdateTask"><i class="fa fa-close" aria-hidden="true"></i> Annuler</button>
+				</form>
+
+				<form id="formFilterTask" class="formTask">
+					<h2>Mise a jour de la tâche</h2>
+
+					<div>
+						<div class="radio_group">
+							<input type="radio" id="filter_all" name="filter" value="all" checked />
+							<label for="filter_all">Tout</label>
+						</div>
+
+						<div class="radio_group">
+							<input type="radio" id="filter_true" name="filter" value="true" />
+							<label for="filter_true">Fait</label>
+						</div>
+
+						<div class="radio_group">
+							<input type="radio" id="filter_false" name="filter" value="false" />
+							<label for="filter_false">A faire</label>
+						</div>
+					</div>
+
+					<button type="submit"><i class="fa fa-filter" aria-hidden="true"></i> Filtrer</button>
+					<button type="reset" data-action="toggleForm" data-target="formFilterTask"><i class="fa fa-close" aria-hidden="true"></i> Annuler</button>
+				</form>
+			</div>
+
+			<div id="menu">
+				<button type="button" id="reloadTasks"><i class="fa-solid fa-rotate"></i> <span>Recharger</span></button>
+				<button type="button" id="addTask" data-action="toggleForm" data-target="formNewTask"><i class="fa-solid fa-plus"></i> <span>Ajouter une tache</span></button>
+				<button type="button" id="deleteTask"><i class="fa-solid fa-trash" aria-hidden="true"></i> <span> Supprimer</span></button>
+				<button type="button" id="updateTask" data-action="toggleForm" data-target="formUpdateTask"><i class="fa-solid fa-pen-to-square"></i> <span>Mettre a jour</span></button>
+				<button type="button" id="filterTask" data-action="toggleForm" data-target="formFilterTask"><i class="fa fa-filter" aria-hidden="true"></i> <span>Filtrer</span></button>
+			</div>
+
+			<div id="listTask">
+				<div class="list"></div>
+				<div id="state"></div>
+			</div>
+		</main>
+
+		<footer></footer>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+			integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
+			integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
+			crossorigin="anonymous"
+			referrerpolicy="errerfno-re"
+		></script>
+
+		<script src="./js/request.js"></script>
+		<script src="./js/main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+#popup {
+
+    transition: all 0.5s;
+
+
+	position: fixed;
+	align-self: center;
+
+	height: 0;
+	width: 0;
+
+	display: flex;
+	justify-content: center;
+	align-content: center;
+
+	background: rgba(#000, 0);
+
+	&:has(.show) {
+		width: calc(100vw - 10px);
+		height: calc(100% - 68px);
+		padding: 5px;
+
+        background: rgba(#000, 0.5);
+	}
+
+	> * {
+		width: 90%;
+
+		&:not(.show) {
+			display: none;
+		}
+
+		@media (min-width: 1024px) {
+			width: 50%;
+		}
+		@media (min-width: 1536px) {
+			width: 30%;
+		}
+	}
+}

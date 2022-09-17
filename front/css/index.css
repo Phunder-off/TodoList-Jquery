@@ -1,0 +1,316 @@
+body,
+p,
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 10px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px #c4c2c2;
+  transition: outline 0.2s;
+}
+.card.card-focus {
+  outline: solid 8px #3b6bfb;
+}
+.card > div {
+  width: calc(100% - 30px);
+  padding: 15px;
+}
+.card > .card-header {
+  height: fit-content;
+  word-wrap: break-word;
+  border-bottom: solid 1px #c4c2c2;
+}
+.card > .card-header h3::first-letter {
+  text-transform: capitalize;
+}
+.card > .card-header h4 {
+  padding: 5px;
+  font-size: small;
+  font-weight: normal;
+  color: gray;
+}
+.card > .card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: small;
+  margin-top: auto;
+  border-top: solid 1px #c4c2c2;
+}
+.card > .card-footer * {
+  width: 50%;
+}
+.card > .card-footer button {
+  margin-right: auto;
+  background: #3b6bfb;
+  color: white;
+  border: solid 1px #2a2d34;
+  border-radius: 16px;
+}
+.card > .card-footer button[data-finish=true] {
+  background: #2a2d34;
+}
+.card > .card-footer button:hover {
+  box-shadow: 0 0 5px 2px #c4c2c2;
+}
+
+.loader {
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  border-top: solid 2px white;
+  border-bottom: solid 2px white;
+  border-left: solid 2px white;
+  animation: rotation 1s infinite linear;
+  border-radius: 50px;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+.container {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.input_group {
+  padding: 5px;
+  width: 100%;
+}
+.input_group * {
+  width: 100%;
+}
+.input_group label {
+  position: relative;
+  transition: top 0.5s;
+  top: 1rem;
+  color: gray;
+}
+.input_group input {
+  background: none;
+  border: none;
+  border-bottom: solid 2px #3b6bfb;
+  display: block;
+  width: calc(100% - 3px - 5px);
+}
+.input_group:has(input:not(:placeholder-shown)) label {
+  top: 0;
+}
+.input_group:has(input:focus-visible) > label {
+  top: 0;
+}
+.input_group:has(input:focus-visible) > input {
+  outline: none;
+  border-bottom: solid 3px #3b6bfb;
+}
+
+.radio_group {
+  display: inline-block;
+  text-align: center;
+  width: 30%;
+}
+
+#popup {
+  transition: all 0.5s;
+  position: fixed;
+  align-self: center;
+  height: 0;
+  width: 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background: rgba(0, 0, 0, 0);
+}
+#popup:has(.show) {
+  width: calc(100vw - 10px);
+  height: calc(100% - 68px);
+  padding: 5px;
+  background: rgba(0, 0, 0, 0.5);
+}
+#popup > * {
+  width: 90%;
+}
+#popup > *:not(.show) {
+  display: none;
+}
+@media (min-width: 1024px) {
+  #popup > * {
+    width: 50%;
+  }
+}
+@media (min-width: 1536px) {
+  #popup > * {
+    width: 30%;
+  }
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+  justify-content: center;
+}
+main > div {
+  width: 100%;
+}
+@media (min-width: 512px) {
+  main {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
+main * {
+  transition: all 0.5s, color 0s;
+}
+
+#navbar {
+  padding: 1rem 0;
+  background: #2a2d34;
+  color: white;
+}
+#navbar h1 {
+  text-align: center;
+}
+
+#menu {
+  background: whitesmoke;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+#menu button {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  font-size: large;
+  background: whitesmoke;
+  border: none;
+}
+#menu button span {
+  display: none;
+}
+#menu button:hover {
+  background: #2a2d34;
+  color: white;
+}
+@media (min-width: 512px) {
+  #menu {
+    width: 10%;
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 1024px) {
+  #menu {
+    width: 20%;
+    align-content: start;
+  }
+  #menu button {
+    height: 4rem;
+  }
+  #menu button span {
+    display: inline-block;
+  }
+}
+
+.formTask {
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+  justify-content: space-around;
+  padding: 10px;
+  background: whitesmoke;
+  border-radius: 16px;
+  box-shadow: 0px 0px 10px #c4c2c2;
+}
+.formTask > div {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 5px;
+}
+.formTask button {
+  margin-top: 1rem;
+  padding: 6px 15px;
+  background: #2a2d34;
+  border: solid 2px whitesmoke;
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: bold;
+}
+
+#listTask {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: auto;
+  height: calc(100vh - 57px - 43px);
+}
+#listTask form {
+  width: 100%;
+  margin: 1rem;
+}
+#listTask > div#state:not(:empty) {
+  position: fixed;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+#listTask > .list {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: flex-start;
+}
+#listTask .card {
+  width: 100%;
+}
+@media (min-width: 512px) {
+  #listTask {
+    height: calc(100vh - 60px);
+  }
+  #listTask .card {
+    width: 45%;
+  }
+  #listTask form {
+    width: 75%;
+    margin: 1rem;
+  }
+}
+@media (min-width: 1024px) {
+  #listTask form {
+    width: 50%;
+    margin: 1rem;
+  }
+}
+@media (min-width: 1536px) {
+  #listTask .card {
+    width: 30%;
+  }
+}/*# sourceMappingURL=index.css.map */
