@@ -2,7 +2,6 @@
 
 
 ## Les Dépendances
--  [node](https://nodejs.org/)
 -  [json-server](https://www.npmjs.com/package/json-server)
 
 ## L'utilisation
