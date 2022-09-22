@@ -6,3 +6,8 @@
 
 ## L'utilisation
 - Lancer le fichier `start.bat`.
+
+### Les ports
+- Front `3001`
+- Back `3000`
+
